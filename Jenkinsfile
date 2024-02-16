@@ -1,25 +1,24 @@
 pipeline {
     agent any
     
-    tools{
+    tools {
         jdk 'jdk17'
         nodejs 'node16'
-    
-    
+    }
+
     stages {
         stage('Git Checkout') {
             steps {
                 git credentialsId: 'git-token', url: 'https://github.com/Rakeshkumar9900/banking-project.git'
             }
         }
-        
-        
-         stage('Install Dependencies') {
+
+        stage('Install Dependencies') {
             steps {
                 sh "npm install"
             }
         }
-        
+
         stage('Backend') {
             steps {
                 dir('/root/.jenkins/workspace/Bank/app/backend') {
@@ -27,7 +26,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('frontend') {
             steps {
                 dir('/root/.jenkins/workspace/Bank/app/frontend') {
@@ -35,8 +34,8 @@ pipeline {
                 }
             }
         }
-        
-        stage('Deploy to Conatiner') {
+
+        stage('Deploy to Container') {
             steps {
                 sh "npm run compose:up -d"
             }
