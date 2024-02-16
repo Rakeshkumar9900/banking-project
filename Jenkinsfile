@@ -3,9 +3,8 @@ pipeline {
     
     tools {
         jdk 'jdk' // Use 'jdk' instead of 'jdk17'
-        nodejs 'node' // Use 'node' instead of 'nodejs'
+        
     }
-
     stages {
         stage('Git Checkout') {
             steps {
