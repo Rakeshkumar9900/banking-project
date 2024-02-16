@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     tools {
-        jdk 'jdk17'
-        nodejs 'node16'
+        jdk 'jdk' // Use 'jdk' instead of 'jdk17'
+        nodejs 'node' // Use 'node' instead of 'nodejs'
     }
 
     stages {
