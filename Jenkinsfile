@@ -3,9 +3,9 @@ pipeline {
     
     tools {
         jdk 'jdk' // Use 'jdk' instead of 'jdk17'
-        
     }
-    
+
+    stages {
         stage('Install Dependencies') {
             steps {
                 sh "npm install"
@@ -34,4 +34,4 @@ pipeline {
             }
         }
     }
-
+}
