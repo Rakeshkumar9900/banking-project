@@ -5,13 +5,7 @@ pipeline {
         jdk 'jdk' // Use 'jdk' instead of 'jdk17'
         
     }
-    stages {
-        stage('Git Checkout') {
-            steps {
-                git credentialsId: 'git-token', url: 'https://github.com/Rakeshkumar9900/banking-project.git'
-            }
-        }
-
+    
         stage('Install Dependencies') {
             steps {
                 sh "npm install"
